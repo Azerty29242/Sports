@@ -1,4 +1,4 @@
-# ![Icone](https://raw.githubusercontent.com/Azerty29242/Sports/main/Assets/Images/Icon.png) Sports
+# <img src="./Assets/Images/Icon.png" height="25"> Sports
 
 ## Téléchargement
 
