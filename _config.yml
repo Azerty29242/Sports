@@ -1,6 +1,9 @@
 remote_theme: pages-themes/cayman@v0.2.0
 title: "Sports"
 description: "Un jeu de penalty créé pour le concours Jeux Fabrique"
+github:
+  win64_setup_url: https://github.com/Azerty29242/Sports/releases/download/v0.2.0-beta/Sports-Setup-Windows-64bits.exe
+  win32_setup_url: https://github.com/Azerty29242/Sports/releases/download/v0.2.0-beta/Sports-Setup-Windows-32bits.exe
 show_downloads: "true"
 plugins:
 - jekyll-remote-them
