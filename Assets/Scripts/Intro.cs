@@ -6,6 +6,8 @@ public class Intro : MonoBehaviour
 {
     void Start()
     {
+        GameObject.FindGameObjectWithTag("MainMusic").GetComponent<AudioSource>().Pause();
+
         VideoPlayer video = GetComponent<VideoPlayer>();
 
         video.loopPointReached += EndReached;

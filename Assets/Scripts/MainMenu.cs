@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        if (!GameObject.FindGameObjectWithTag("MainMusic").GetComponent<AudioSource>().isPlaying)
+        {
+            GameObject.FindGameObjectWithTag("MainMusic").GetComponent<AudioSource>().Play();
+        }
+
         playButton.onClick.AddListener(Play);
         creditsButton.onClick.AddListener(DisplayCredits);
         quitButton.onClick.AddListener(Quit);

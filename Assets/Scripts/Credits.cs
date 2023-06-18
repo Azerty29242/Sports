@@ -5,6 +5,8 @@ public class Credits : StateMachineBehaviour
 {
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameObject.FindGameObjectWithTag("MainMusic").GetComponent<AudioSource>().Play();
+
         animator.Play("Scroling");
     }
 
