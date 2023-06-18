@@ -74,6 +74,7 @@ public class Game : MonoBehaviour
         }
         else
         {
+            UpdateTargets();
             UpdateInfo();
         }
     }
