@@ -7,15 +7,17 @@ public class Game : MonoBehaviour
 {
     public GameObject[] targets;
     public TMP_Text scoreText;
-    public TMP_Text livesText;
+    public TMP_Text lifeCountText;
     public AudioSource CrowdCheers;
     public AudioSource RefereeWhistle;
-    private int score = 0;
-    private int lives = 3;
 
     void Start()
     {
         GameObject.FindGameObjectWithTag("MainMusic").GetComponent<AudioSource>().Pause();
+
+        PlayerStats.score = 0;
+        PlayerStats.lifeCount = 3;
+
         UpdateTargets();
     }
 
@@ -51,7 +53,7 @@ public class Game : MonoBehaviour
     {
         if (targets[targetIndex].activeSelf)
         {
-            score += 1;
+            PlayerStats.score += 1;
 
             CrowdCheers.Play();
             StartCoroutine(WaitForEndOfCrowdCheers());
@@ -62,20 +64,20 @@ public class Game : MonoBehaviour
             UpdateTargets();
         }
 
-        UpdateInfo();
+        UpdateStats();
     }
 
     void Miss()
     {
-        lives -= 1;
-        if (lives == 0)
+        PlayerStats.lifeCount -= 1;
+        if (PlayerStats.lifeCount == 0)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("GameOver");
         }
         else
         {
             UpdateTargets();
-            UpdateInfo();
+            UpdateStats();
         }
     }
 
@@ -97,10 +99,10 @@ public class Game : MonoBehaviour
         RefereeWhistle.Play();
     }
 
-    void UpdateInfo()
+    void UpdateStats()
     {
-        scoreText.text = "Score : " + score.ToString();
-        livesText.text = "Lives : " + lives.ToString();
+        scoreText.text = "Score : " + PlayerStats.score.ToString();
+        lifeCountText.text = "Lives : " + PlayerStats.lifeCount.ToString();
     }
 
     IEnumerator WaitForEndOfCrowdCheers()

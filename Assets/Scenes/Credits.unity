@@ -302,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 490, y: -340}
-  m_SizeDelta: {x: -980, y: 680}
+  m_AnchoredPosition: {x: 490, y: -360}
+  m_SizeDelta: {x: -980, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416693218
 MonoBehaviour:
@@ -340,6 +340,8 @@ MonoBehaviour:
     LE COZ
 
     Jules JUNG
+
+    Simon LE ROI
 
 
     Axel LE BRETON
@@ -458,8 +460,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1777472209}
+  m_Children: []
   m_Father: {fileID: 1339008325}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -707,6 +708,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 51287241}
+  - {fileID: 1777472209}
   - {fileID: 767345639}
   - {fileID: 1340870062}
   m_Father: {fileID: 0}
@@ -885,13 +887,13 @@ RectTransform:
   - {fileID: 1986332578}
   - {fileID: 416693217}
   - {fileID: 1828049762}
-  m_Father: {fileID: 767345639}
+  m_Father: {fileID: 1339008325}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -775}
-  m_SizeDelta: {x: 1920, y: 1550}
+  m_AnchoredPosition: {x: 0, y: -1060}
+  m_SizeDelta: {x: 1920, y: 2120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1777472210
 Animator:
@@ -957,8 +959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -375}
-  m_SizeDelta: {x: 0, y: -750}
+  m_AnchoredPosition: {x: 0, y: -420}
+  m_SizeDelta: {x: 0, y: -840}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828049763
 MonoBehaviour:
@@ -986,11 +988,11 @@ MonoBehaviour:
     ete faite par \"OpenClipart-Vectors\" \net la cible a ete faite par \"Clker-Free-Vector-Images\".\nLa
     musique d'ascenseur a ete faite par \"Lesfm\", \nles applaudissements ont ete
     fait par \"Pixabay\" \net les bruits de sifflet ont ete fait par \"Pixabay\".\n\nUn
-    grand merci a Simon LE ROI pour avoir donne le drap blanc, \n\xE0 M. CARLIER
-    pour nous avoirs parle de ce projet et nous avoir fourni les fils electrique,
-    \nla MaKey MaKey, du scotch brun, des fils de fer et surtout le tableau,\na Yoen
-    LE COZ pour nous avoir prete un ballon de foot,\n\nEt surtout :\n\nMerci beaucoup
-    a tous ceux qui ont pris le temps de tester ce jeu !"
+    grand merci a M. CARLIER pour nous avoirs parle de ce projet et nous avoir fourni
+    \nles fils electrique, la MaKey MaKey, du scotch brun, des fils de fer et surtout
+    le tableau,\na Yoen et Elouan LE COZ pour nous avoir prete un ballon de foot,\npour
+    le drap blanc, merci a Jules JUNG pour le carton utilise\n\nEt surtout :\n\nMerci
+    beaucoup a tous ceux qui ont pris le temps de tester ce jeu !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b6eec3d54ee84b21acaa90ada406b69, type: 2}
   m_sharedMaterial: {fileID: -1203893836191860874, guid: 8b6eec3d54ee84b21acaa90ada406b69, type: 2}
@@ -1029,7 +1031,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 72
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1102,8 +1104,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -490, y: -340}
-  m_SizeDelta: {x: -980, y: 680}
+  m_AnchoredPosition: {x: -490, y: -360}
+  m_SizeDelta: {x: -980, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986332581
 MonoBehaviour:
@@ -1135,6 +1137,7 @@ MonoBehaviour:
 
 
     Fabrication
+
 
 
 
