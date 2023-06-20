@@ -10,6 +10,8 @@ public class Game : MonoBehaviour
     public TMP_Text lifeCountText;
     public AudioSource CrowdCheers;
     public AudioSource RefereeWhistle;
+    private bool keysEnabled = true;
+    private float pauseTime = 0;
 
     void Start()
     {
@@ -23,29 +25,45 @@ public class Game : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("w"))
+        if (pauseTime <= 0)
         {
-            Goal(0);
+            if (keysEnabled)
+            {
+                if (Input.GetKeyUp("w"))
+                {
+                    keysEnabled = false;
+                    Goal(0);
+                }
+                else if (Input.GetKeyUp("d"))
+                {
+                    keysEnabled = false;
+                    Goal(1);
+                }
+                else if (Input.GetKeyUp("a"))
+                {
+                    keysEnabled = false;
+                    Goal(2);
+                }
+                else if (Input.GetKeyUp("s"))
+                {
+                    keysEnabled = false;
+                    Goal(3);
+                }
+                else if (Input.GetKeyUp("g"))
+                {
+                    keysEnabled = false;
+                    Goal(4);
+                }
+                else if (Input.GetKeyUp("space"))
+                {
+                    keysEnabled = false;
+                    Miss();
+                }
+            }
         }
-        else if (Input.GetKeyDown("d"))
+        else
         {
-            Goal(1);
-        }
-        else if (Input.GetKeyDown("a"))
-        {
-            Goal(2);
-        }
-        else if (Input.GetKeyDown("s"))
-        {
-            Goal(3);
-        }
-        else if (Input.GetKeyDown("g"))
-        {
-            Goal(4);
-        }
-        else if (Input.GetKeyDown("space"))
-        {
-            Miss();
+            pauseTime -= Time.deltaTime;
         }
     }
 
@@ -56,7 +74,7 @@ public class Game : MonoBehaviour
             PlayerStats.score += 1;
 
             CrowdCheers.Play();
-            StartCoroutine(WaitForEndOfCrowdCheers());
+            StartCoroutine(WaitForEndOfAudio(CrowdCheers, UpdateTargets));
         }
         else
         {
@@ -96,7 +114,13 @@ public class Game : MonoBehaviour
             removedObject.SetActive(false);
             enabledTargets = enabledTargets.Pop(shiftIndex);
         }
+
         RefereeWhistle.Play();
+        StartCoroutine(WaitForEndOfAudio(RefereeWhistle, () =>
+        {
+            keysEnabled = true;
+            pauseTime = 1;
+        }));
     }
 
     void UpdateStats()
@@ -105,13 +129,15 @@ public class Game : MonoBehaviour
         lifeCountText.text = "Lives : " + PlayerStats.lifeCount.ToString();
     }
 
-    IEnumerator WaitForEndOfCrowdCheers()
+    IEnumerator WaitForEndOfAudio(AudioSource audio, System.Action callback)
     {
+        Debug.Log(audio.name + " has begun to play.");
         while (CrowdCheers.isPlaying)
         {
             yield return null;
         }
 
-        UpdateTargets();
+        Debug.Log(audio.name + " has finished to play.");
+        callback();
     }
 }
